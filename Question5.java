@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class Question5
 {
   public static void main(String[] args)
@@ -27,6 +27,36 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
+    System.out.println("Enter Number: ");
+    int number = in.nextInt();
+    int[] InputNumbers = new int[number];
+    int positionnumber = 0;
+
+    while (number > 0 ) {
+
+      System.out.println("Enter next Number: ");
+      int inputnumber = in.nextInt();
+      InputNumbers[positionnumber] = inputnumber;
+      number = number - 1;
+      positionnumber = positionnumber + 1;
+    }
+    
+ 
+    int count = 0;
+    int modenumber = 0;
+    for(int i : InputNumbers) {
+      int icount = 0;
+      for(int x : InputNumbers){
+        if (i == x){
+          icount = icount + 1;
+        }
+      }
+      if (icount > count){
+        count = icount;
+        modenumber = i;
+      }
+    }
+    System.out.println("The mode number is : " + modenumber);
     
   }
 }
