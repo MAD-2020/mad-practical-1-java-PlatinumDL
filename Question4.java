@@ -18,6 +18,13 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
+    System.out.println("Enter Number: ");
+    int number = in.nextInt();
+    while (number > 0) {
+      String print = "*".repeat(number);
+      System.out.println(print);
+      number = number - 1;
+    }
     
   }
 }
